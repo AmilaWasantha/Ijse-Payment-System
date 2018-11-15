@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+}
+
+mainClassName =  'de.jensd.fx.glyphs.examples.CssStyledGlyphsApp'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'de.jensd.fx.glyphs.examples.CssStyledGlyphsApp'
+}
+
+task execute(type:JavaExec) {
+    main = mainClass
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+dependencies {
+    compile 'de.jensd:fontawesomefx-emojione:2.2.7-2'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-5'
+    compile 'de.jensd:fontawesomefx-icons525:3.0.0-4'
+    compile 'de.jensd:fontawesomefx-materialdesignfont:1.7.22-4'
+    compile 'de.jensd:fontawesomefx-materialicons:2.2.0-5'
+    compile 'de.jensd:fontawesomefx-octicons:4.3.0-5'
+    compile 'de.jensd:fontawesomefx-weathericons:2.0.10-5'
+    compile 'de.jensd:fontawesomefx-controls:8.15'
+    compile 'org.controlsfx:controlsfx:8.40.11'
+}

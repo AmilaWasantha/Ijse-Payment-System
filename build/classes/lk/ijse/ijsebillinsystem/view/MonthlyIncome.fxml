@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="lk.ijse.ijsebillinsystem.viewcontroller.MonthlyIncomeController">
+   <children>
+      <Pane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #C39BD3;">
+         <children>
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="47.0" prefWidth="266.0" text="Monthly Income" textFill="#eae9e9">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <JFXProgressBar layoutX="14.0" layoutY="73.0" prefHeight="3.0" prefWidth="782.0" style="-fx-background-color: #eae9e9;" />
+         </children>
+      </Pane>
+      <JFXDatePicker fx:id="datePicker" layoutX="239.0" layoutY="163.0" onAction="#datePickerAction" prefHeight="28.0" prefWidth="321.0" />
+      <Label layoutX="44.0" layoutY="167.0" prefHeight="28.0" prefWidth="154.0" text="Seletct The Date">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtMonthlyIncomeRegistration" labelFloat="true" layoutX="244.0" layoutY="249.0" prefHeight="26.0" prefWidth="303.0" promptText="Monthly Income For Registration" />
+      <JFXTextField fx:id="txtMonthlyIncomeBatchTransfer" labelFloat="true" layoutX="244.0" layoutY="316.0" prefHeight="26.0" prefWidth="303.0" promptText="Monthly Income For Batch Transfer" />
+      <JFXTextField fx:id="txtMonthlyIncomePayment" labelFloat="true" layoutX="244.0" layoutY="389.0" prefHeight="26.0" prefWidth="303.0" promptText="Monthly Income For Batch Payment" />
+      <JFXButton fx:id="btnPringMonthlyIncom" layoutX="517.0" layoutY="440.0" onAction="#pringMonthlyIncomeAction" prefHeight="38.0" prefWidth="236.0" style="-fx-background-color: #DC7633;" text="Print Monthly Income Bill" textFill="#f0ecec">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

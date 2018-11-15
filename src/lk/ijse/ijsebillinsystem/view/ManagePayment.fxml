@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="MainPanal" prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: white; -fx-border-style: transparent; -fx-border-width: 10px; -fx-border-color: #DCC6E0;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.ijsebillinsystem.viewcontroller.ManagePaymentController">
+   <children>
+      <JFXTextField fx:id="txtDate" labelFloat="true" layoutX="106.0" layoutY="212.0" prefHeight="26.0" prefWidth="237.0" promptText="Date" />
+      <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="106.0" layoutY="269.0" prefHeight="26.0" prefWidth="237.0" promptText="Student Name" />
+      <JFXTextField fx:id="txtStudentNIC" labelFloat="true" layoutX="430.0" layoutY="212.0" onAction="#StudentNicAction" onKeyPressed="#studentNicPresedAction" onMouseEntered="#EnterMouseStudentNIC" prefHeight="26.0" prefWidth="237.0" promptText="Student NIC" />
+      <JFXTextField fx:id="txtStudentID" labelFloat="true" layoutX="725.0" layoutY="212.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Student ID" />
+      <Label layoutX="110.0" layoutY="468.0" prefHeight="26.0" prefWidth="179.0" text="Payment Type" textFill="#238fca">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="radioBtnFullPayment" layoutX="287.0" layoutY="473.0" onAction="#radioFullPaymentAction" text="Full Payment" />
+      <JFXRadioButton fx:id="radioBtnHalfPayment" layoutX="461.0" layoutY="473.0" onAction="#rediohalfPaymentAction" text="Half Payment" />
+      <JFXTextField fx:id="txtFullPaymentFee" labelFloat="true" layoutX="104.0" layoutY="545.0" prefHeight="26.0" prefWidth="237.0" promptText="Full Amount" />
+      <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="383.0" layoutY="545.0" prefHeight="26.0" prefWidth="187.0" promptText="Discount" />
+      <JFXTextField fx:id="txtTax" labelFloat="true" layoutX="610.0" layoutY="545.0" prefHeight="26.0" prefWidth="187.0" promptText="Tax" />
+      <JFXTextField fx:id="txtLate" labelFloat="true" layoutX="824.0" layoutY="545.0" prefHeight="26.0" prefWidth="187.0" promptText="Late" />
+      <JFXTextField fx:id="txtCurrentPayment" labelFloat="true" layoutX="104.0" layoutY="598.0" onKeyPressed="#currentPaymentAction" prefHeight="26.0" prefWidth="237.0" promptText="Pay Amount" />
+      <JFXTextField fx:id="txtBalance" labelFloat="true" layoutX="383.0" layoutY="598.0" prefHeight="26.0" prefWidth="187.0" promptText="Balance" />
+      <TableView fx:id="tablePayment" layoutX="93.0" layoutY="738.0" prefHeight="200.0" prefWidth="914.0">
+        <columns>
+          <TableColumn prefWidth="111.20001220703125" text="Payment ID" />
+          <TableColumn prefWidth="96.0" text="Date" />
+            <TableColumn prefWidth="111.20001220703125" text="Student Name" />
+            <TableColumn prefWidth="105.60000610351562" text="Course Name" />
+            <TableColumn prefWidth="122.39996337890625" text="Payment Type" />
+            <TableColumn prefWidth="124.79998779296875" text="Full Payment" />
+            <TableColumn prefWidth="132.7999267578125" text="Advance" />
+            <TableColumn prefWidth="113.5999755859375" text="Blance" />
+        </columns>
+      </TableView>
+      <Label layoutX="108.0" layoutY="694.0" prefHeight="26.0" prefWidth="179.0" text="Payment Table" textFill="#238fca">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnMakePayment" layoutX="414.0" layoutY="960.0" onAction="#ButtonMakaPaymentAction" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #48A5EA;" text="Make Payment" textFill="#ba4040">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdatePyment" layoutX="605.0" layoutY="960.0" onAction="#ButtonUpdatePaymentAction" prefHeight="44.0" prefWidth="187.0" style="-fx-background-color: #48A5EA;" text="Update Payment" textFill="#ba4040">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtLateDate" labelFloat="true" layoutX="610.0" layoutY="598.0" prefHeight="26.0" prefWidth="187.0" promptText="Late Dates" />
+      <JFXButton fx:id="btnPrintBill" layoutX="819.0" layoutY="960.0" onAction="#buttonPrintPaymentBill" prefHeight="44.0" prefWidth="187.0" style="-fx-background-color: #48A5EA;" text="Print Bill" textFill="#ba4040">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="comboCourseName" labelFloat="true" layoutX="430.0" layoutY="269.0" onAction="#comboCourseNameAction" prefHeight="26.0" prefWidth="238.0" promptText="Course Name" />
+      <JFXCheckBox fx:id="settleBalanceCheckBoxID" layoutX="322.0" layoutY="466.0" onAction="#settleBalanceCheckBoxAction" prefHeight="31.0" prefWidth="441.0" text="Please Settle The Payment Balance Now" textFill="#cd1f1f">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXTextField fx:id="txtSettleBalance" labelFloat="true" layoutX="383.0" layoutY="655.0" prefHeight="26.0" prefWidth="187.0" promptText="Settle Balance" />
+      <JFXTextField fx:id="txtTotalOfPayAmount" labelFloat="true" layoutX="610.0" layoutY="655.0" prefHeight="26.0" prefWidth="187.0" promptText="Total Of Pay Amount" />
+      <JFXDatePicker fx:id="txtPendinDate" layoutX="827.0" layoutY="597.0" />
+      <Label fx:id="lableFullPayment" layoutX="345.0" layoutY="466.0" prefHeight="40.0" prefWidth="597.0" text="You Are Settle The Full Payment This Course" textFill="#b72222">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCoursID" labelFloat="true" layoutX="725.0" layoutY="269.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Course ID" />
+      <JFXTextField fx:id="txtBatchName" labelFloat="true" layoutX="109.0" layoutY="336.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Batch Name" />
+      <JFXTextField fx:id="txtBatchID" labelFloat="true" layoutX="430.0" layoutY="336.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Batch ID" />
+      <JFXTextField fx:id="txtPaymentDate" labelFloat="true" layoutX="725.0" layoutY="336.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Payment Date" />
+      <JFXTextField fx:id="txtRegistrationID" labelFloat="true" layoutX="109.0" layoutY="397.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Registration ID" />
+      <JFXTextField fx:id="txtPaymentID" labelFloat="true" layoutX="430.0" layoutY="397.0" onKeyPressed="#PressStudentIdAction" prefHeight="26.0" prefWidth="237.0" promptText="Payment ID" />
+      <Pane layoutX="28.0" layoutY="20.0" prefHeight="100.0" prefWidth="1064.0" style="-fx-background-color: #C39BD3;">
+         <children>
+            <Label layoutX="33.0" layoutY="27.0" prefHeight="47.0" prefWidth="394.0" text="Students Payment Form" textFill="#eae9e9">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="74.0" fitWidth="104.0" layoutX="990.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/home.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow height="154.91" radius="101.97749999999999" width="255.0" />
+         </effect>
+      </Pane>
+      <Separator layoutX="384.0" layoutY="183.0" prefHeight="3.0" prefWidth="686.0" style="-fx-background-color: #d29a9a;" />
+      <Separator layoutX="1066.0" layoutY="183.0" orientation="VERTICAL" prefHeight="830.0" prefWidth="6.0" style="-fx-background-color: #d29a9a;" />
+      <Separator layoutX="45.0" layoutY="182.0" orientation="VERTICAL" prefHeight="849.0" prefWidth="2.0" style="-fx-background-color: #d29a9a;" />
+      <Label layoutX="137.0" layoutY="167.0" prefHeight="34.0" prefWidth="249.0" text="Student Payment Info" textFill="#d29a9a">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Separator layoutX="44.0" layoutY="181.0" prefHeight="2.0" prefWidth="90.0" style="-fx-background-color: #d29a9a;" />
+   </children>
+   <effect>
+      <InnerShadow choke="0.67" color="#dda8a8" height="255.0" radius="97.21000000000001" width="135.84" />
+   </effect>
+</AnchorPane>

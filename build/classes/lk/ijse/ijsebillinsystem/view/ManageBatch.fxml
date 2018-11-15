@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPanal" prefHeight="700.0" prefWidth="1050.0" style="-fx-border-color: #DCC6E0; -fx-border-width: 10px; -fx-background-color: wight;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.ijsebillinsystem.viewcontroller.SaveBatchController">
+   <children>
+      <JFXTextField fx:id="txtBatchName" labelFloat="true" layoutX="37.0" layoutY="197.0" prefHeight="26.0" prefWidth="254.0" promptText="Batch Name :" />
+      <JFXTextField fx:id="txtStartDate" labelFloat="true" layoutX="41.0" layoutY="581.0" prefHeight="26.0" prefWidth="254.0" promptText="Start Date :" />
+      <JFXComboBox fx:id="comboCourses" labelFloat="true" layoutX="41.0" layoutY="284.0" onAction="#comboAction" prefHeight="26.0" prefWidth="245.0" promptText="Courses" />
+      <JFXButton fx:id="btnSaveBatch" layoutX="41.0" layoutY="641.0" onAction="#buttonSaveBatch" prefHeight="44.0" prefWidth="162.0" style="-fx-background-color: #48A5EA;" text="Save Batch" textFill="#ba4040">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdateBatch" layoutX="214.0" layoutY="641.0" onAction="#buttonUpdateBatch" prefHeight="44.0" prefWidth="162.0" style="-fx-background-color: #48A5EA;" text="Update Batch" textFill="#ba4040">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXNodesList layoutY="41.0" />
+      <Label layoutX="37.0" layoutY="150.0" prefHeight="26.0" prefWidth="188.0" text="Save Batch" textFill="#d29a9a">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="41.0" layoutY="508.0" prefHeight="26.0" prefWidth="254.0" promptText="Status" />
+      <JFXTextField fx:id="txtCoursName" labelFloat="true" layoutX="41.0" layoutY="366.0" prefHeight="26.0" prefWidth="254.0" promptText="Course ID :" />
+      <JFXButton fx:id="btnStartBatch" layoutX="422.0" layoutY="275.0" onAction="#buttonStartBatchAction" prefHeight="44.0" prefWidth="162.0" style="-fx-background-color: #48A5EA;" text="Start Batch" textFill="#ba4040">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="428.0" layoutY="150.0" prefHeight="26.0" prefWidth="188.0" text="Start Batch" textFill="#d29a9a">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="comboSelectFormStartBatch" labelFloat="true" layoutX="424.0" layoutY="197.0" onAction="#comboAction" prefHeight="26.0" prefWidth="245.0" promptText="Select Batch Name And Start :" />
+      <JFXComboBox fx:id="comboForEndBatch" labelFloat="true" layoutX="751.0" layoutY="197.0" onAction="#comboAction" prefHeight="26.0" prefWidth="245.0" promptText="Select Batch Name And End :" />
+      <Label layoutX="751.0" layoutY="150.0" prefHeight="26.0" prefWidth="188.0" text="End Batch" textFill="#d29a9a">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnEndBatch" layoutX="751.0" layoutY="275.0" onAction="#buttonEndBatchAction" prefHeight="44.0" prefWidth="162.0" style="-fx-background-color: #48A5EA;" text="End Batch" textFill="#ba4040">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="422.0" layoutY="366.0" prefHeight="26.0" prefWidth="188.0" text="Batch Table" textFill="#d29a9a">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXProgressBar layoutX="393.0" layoutY="150.0" prefHeight="534.0" prefWidth="6.0" />
+      <JFXProgressBar layoutX="712.0" layoutY="147.0" prefHeight="189.0" prefWidth="6.0" />
+      <TableView fx:id="tableBatch" layoutX="422.0" layoutY="414.0" prefHeight="200.0" prefWidth="584.0">
+        <columns>
+          <TableColumn prefWidth="153.60000610351562" text="Batch ID " />
+          <TableColumn prefWidth="163.99993896484375" text="Batch Name" />
+            <TableColumn prefWidth="135.20001220703125" text="Start Date" />
+            <TableColumn minWidth="8.80010986328125" prefWidth="131.99993896484375" text="Status" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtBatchType" labelFloat="true" layoutX="41.0" layoutY="434.0" prefHeight="26.0" prefWidth="254.0" promptText="Batch Type:" />
+      <JFXButton fx:id="btnPrint" layoutX="832.0" layoutY="641.0" onAction="#btnPrint_OnAction" prefHeight="44.0" prefWidth="162.0" style="-fx-background-color: #48A5EA; -fx-background-radius: 6 6 6 6;" text="Print" textFill="#ba4040">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="17.0" layoutY="8.0" prefHeight="106.0" prefWidth="1034.0" style="-fx-background-color: #C39BD3;">
+         <children>
+            <Label layoutX="14.0" layoutY="27.0" prefHeight="47.0" prefWidth="320.0" text="Mange Batch" textFill="#eae9e9">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="74.0" fitWidth="104.0" layoutX="960.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/home.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DropShadow height="116.78" radius="92.445" width="255.0" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

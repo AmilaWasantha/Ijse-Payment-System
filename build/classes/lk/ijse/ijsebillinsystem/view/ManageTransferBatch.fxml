@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1100.0" style="-fx-background-color: white; -fx-border-width: 10px; -fx-border-color: #DCC6E0;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.ijsebillinsystem.viewcontroller.ManageTransferBatchController">
+   <children>
+      <JFXTextField fx:id="txtStudentId" editable="false" labelFloat="true" layoutX="564.0" layoutY="164.0" onAction="#searchStudentAndHisCoursesOnAction" prefHeight="26.0" prefWidth="318.0" promptText="Student ID" />
+      <JFXTextField fx:id="txtStudentName" editable="false" labelFloat="true" layoutX="144.0" layoutY="237.0" prefHeight="26.0" prefWidth="307.0" promptText="Student Name" />
+      <JFXTextField fx:id="txtStudentNic" labelFloat="true" layoutX="144.0" layoutY="164.0" onAction="#studentNicOnAction" prefHeight="26.0" prefWidth="307.0" promptText="Student NIC " unFocusColor="#917cef" />
+      <JFXTextField fx:id="txtReson" labelFloat="true" layoutX="138.0" layoutY="570.0" prefHeight="26.0" prefWidth="742.0" promptText="Reason" />
+      <JFXComboBox fx:id="comboNewBatch" labelFloat="true" layoutX="142.0" layoutY="503.0" onAction="#newBatchOnAction" prefHeight="26.0" prefWidth="326.0" promptText="New Batch" />
+      <JFXTextField fx:id="txtTransferFee" labelFloat="true" layoutX="142.0" layoutY="643.0" prefHeight="26.0" prefWidth="326.0" promptText="Transfer Fee" />
+      <TableView fx:id="tableTransferBatch" layoutX="26.0" layoutY="769.0" onSort="#tableTransferBatch" prefHeight="168.0" prefWidth="1036.0">
+        <columns>
+          <TableColumn prefWidth="127.20001220703125" text="Student ID" />
+          <TableColumn prefWidth="146.39993286132812" text="Student NIC" />
+            <TableColumn prefWidth="126.4000244140625" text="Reason" />
+            <TableColumn prefWidth="144.800048828125" text="Date " />
+            <TableColumn prefWidth="171.20001220703125" text="OlD Batch" />
+            <TableColumn prefWidth="160.0" text="New Batch" />
+            <TableColumn prefWidth="160.800048828125" text="Transfer Fee" />
+        </columns>
+      </TableView>
+      <Label layoutX="28.0" layoutY="729.0" prefHeight="40.0" prefWidth="318.0" text="Transfer Batch Table" textFill="#f28484">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSaveTransfer" layoutX="698.0" layoutY="947.0" onAction="#saveTransferOnAction" prefHeight="28.0" prefWidth="162.0" style="-fx-background-color: #48A5EA;" text="Save Transfer">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="880.0" layoutY="947.0" prefHeight="28.0" prefWidth="188.0" style="-fx-background-color: #48A5EA;" text="Update Transfer">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="currentDateID" editable="false" labelFloat="true" layoutX="144.0" layoutY="390.0" prefHeight="26.0" prefWidth="307.0" promptText="Current Date" />
+      <JFXButton fx:id="btnCheckPayment" layoutX="495.0" layoutY="947.0" onAction="#buttonCehckPaymentOrNotAction" prefHeight="44.0" prefWidth="188.0" style="-fx-background-color: #48A5EA;" text="Check Payment">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="comboCourseName" labelFloat="true" layoutX="564.0" layoutY="237.0" onAction="#comboCourseNameOnAction" prefHeight="26.0" prefWidth="318.0" promptText="Course Name" />
+      <JFXTextField fx:id="txtOldBatchName" editable="false" labelFloat="true" layoutX="143.0" layoutY="318.0" prefHeight="26.0" prefWidth="307.0" promptText="Now Batch Name" />
+      <Label layoutX="76.0" layoutY="104.0" prefHeight="30.0" prefWidth="307.0" text="Student Previous Batch Details" textFill="#272829">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="paymentDatePicker" layoutX="565.0" layoutY="642.0" prefHeight="28.0" prefWidth="334.0" promptText="Payment Date" />
+      <JFXTextField fx:id="txtBatchID" editable="false" labelFloat="true" layoutX="565.0" layoutY="318.0" prefHeight="26.0" prefWidth="318.0" promptText="Batch ID" />
+      <JFXTextField fx:id="newBatchID" editable="false" labelFloat="true" layoutX="563.0" layoutY="503.0" prefHeight="26.0" prefWidth="318.0" promptText="New Batch ID" />
+      <Separator layoutX="370.0" layoutY="118.0" prefHeight="3.0" prefWidth="694.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="23.0" layoutY="118.0" orientation="VERTICAL" prefHeight="319.0" prefWidth="2.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="26.0" layoutY="438.0" prefHeight="3.0" prefWidth="1036.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="1059.0" layoutY="118.0" orientation="VERTICAL" prefHeight="319.0" prefWidth="3.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="24.0" layoutY="116.0" prefHeight="3.0" prefWidth="52.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="247.0" layoutY="485.0" prefHeight="3.0" prefWidth="811.0" style="-fx-background-color: #f28484;" />
+      <Label layoutX="76.0" layoutY="473.0" prefHeight="30.0" prefWidth="188.0" text="New Batch Details" textFill="#2c2929">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="29.0" layoutY="485.0" prefHeight="2.0" prefWidth="42.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="26.0" layoutY="487.0" orientation="VERTICAL" prefHeight="217.0" prefWidth="2.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="28.0" layoutY="702.0" prefHeight="3.0" prefWidth="1028.0" style="-fx-background-color: #f28484;" />
+      <Separator layoutX="1055.0" layoutY="483.0" orientation="VERTICAL" prefHeight="218.0" prefWidth="6.0" style="-fx-background-color: #f28484;" />
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="70.0" prefWidth="1067.0" style="-fx-background-color: #C39BD3;">
+         <children>
+            <Label layoutX="24.0" layoutY="11.0" prefHeight="47.0" prefWidth="343.0" text="Mange Transfer Batch" textFill="#eae9e9">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="74.0" fitWidth="104.0" layoutX="979.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/home.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DropShadow height="60.18" radius="78.295" width="255.0" />
+         </effect>
+      </Pane>
+   </children>
+   <effect>
+      <InnerShadow color="#dda8a8" height="255.0" radius="127.0" width="255.0" />
+   </effect>
+</AnchorPane>

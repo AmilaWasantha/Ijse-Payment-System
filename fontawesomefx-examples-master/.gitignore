@@ -1,0 +1,10 @@
+.idea
+*.iml
+.DS_Store
+build/
+out/
+private/
+gradle/
+.ng-gradle/
+.gradle/
+/.nb-gradle/
